@@ -27,9 +27,14 @@ public class Medicamento implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = SEQ, sequenceName = SEQ, allocationSize = 1)
     private Long id;
-
     @Column(name="nome")
     private String nome;
+    @Column(name="preco")
+    private Float preco;
     @Column(name="controlado")
     private Boolean controlado;
+    @Column(name="generico")
+    private Boolean generico;
+    @Column(name="imagem")
+    private String imagem;
 }

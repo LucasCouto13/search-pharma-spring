@@ -35,6 +35,8 @@ public class Produtos implements Serializable{
     private Integer quantidadeEstoque;
     @Column(name = "medida")
     private Float medida;
+    @Column(name="imagem")
+    private String imagem;
 
 //    @ManyToMany(mappedBy = "produto")
 //    @Column(name = "medida")
