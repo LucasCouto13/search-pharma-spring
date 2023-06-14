@@ -17,29 +17,22 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name="medicamento")
-public class Medicamento implements Serializable {
+@Table(name="cosmetico")
+public class Cosmetico implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private static final String SEQ = "medicamento_seq";
+    private static final String SEQ = "cosmetico_seq";
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = SEQ, sequenceName = SEQ, allocationSize = 1)
     private Long id;
-
     @Column(name="nome")
     private String nome;
-
     @Column(name="preco")
     private Float preco;
-
-    @Column(name="controlado")
-    private Boolean controlado;
-
-    @Column(name="generico")
-    private Boolean generico;
-
+    @Column(name="categoria")
+    private String categoria;
     @Column(name="imagem")
     private String imagem;
 }

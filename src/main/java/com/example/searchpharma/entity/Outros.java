@@ -17,11 +17,11 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name="medicamento")
-public class Medicamento implements Serializable {
+@Table(name="outros")
+public class Outros implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private static final String SEQ = "medicamento_seq";
+    private static final String SEQ = "outros_seq";
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -34,11 +34,8 @@ public class Medicamento implements Serializable {
     @Column(name="preco")
     private Float preco;
 
-    @Column(name="controlado")
-    private Boolean controlado;
-
-    @Column(name="generico")
-    private Boolean generico;
+    @Column(name="categoria")
+    private String categoria;
 
     @Column(name="imagem")
     private String imagem;
