@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/cosmetico")
@@ -17,13 +18,19 @@ import java.util.List;
 public class CosmeticoController {
 
     final private CosmeticoService service;
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("")
     public ResponseEntity<List<Cosmetico>> buscarCosmeticos(){
         return ResponseEntity.ok(service.buscarCosmeticos());
     }
-    @GetMapping()
-    public ResponseEntity<List<Cosmetico>> filtrarCosmeticos(String nome){
-        return ResponseEntity.ok(service.filtrarCosmeticos(nome));
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/filtrar/batom")
+    public ResponseEntity<List<Optional<Cosmetico>>> filtrarCosmeticos(){
+        return ResponseEntity.ok(service.filtrarBatons());
+    }
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/filtrar/delineado")
+    public ResponseEntity<List<Optional<Cosmetico>>> filtrarDelineado(){
+        return ResponseEntity.ok(service.filtrarDelineados());
     }
 }

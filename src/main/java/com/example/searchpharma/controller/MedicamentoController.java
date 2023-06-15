@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/medicamento")
@@ -17,9 +18,19 @@ import java.util.List;
 public class MedicamentoController {
 
     final private MedicamentoService service;
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping()
     public ResponseEntity<List<Medicamento>> buscarMedicamentos(){
         return ResponseEntity.ok(service.buscarMedicamentos());
+    }
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/filtrar/controlado")
+    public ResponseEntity<List<Optional<Medicamento>>> filtrarMedicamentosControlados(){
+        return ResponseEntity.ok(service.filtrarPorControlado());
+    }
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/filtrar/generico")
+    public ResponseEntity<List<Optional<Medicamento>>> filtrarMedicamentosGenericos(){
+        return ResponseEntity.ok(service.filtrarPorGenerico());
     }
 }

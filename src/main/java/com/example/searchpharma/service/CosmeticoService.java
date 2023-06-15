@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -20,7 +21,12 @@ public class CosmeticoService {
     public List<Cosmetico> buscarCosmeticos(){
         return repository.findAll();
     }
-    public List<Cosmetico> filtrarCosmeticos(String nome){
-        return repository.filtrarCosmeticos(nome);
+
+    public List<Optional<Cosmetico>> filtrarBatons(){
+        return repository.filtrarBatons();
+    }
+
+    public List<Optional<Cosmetico>> filtrarDelineados(){
+        return repository.filtrarDelineado();
     }
 }
