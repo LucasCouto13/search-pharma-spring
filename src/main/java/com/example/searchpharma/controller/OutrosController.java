@@ -17,17 +17,15 @@ import java.util.Optional;
 @AllArgsConstructor
 public class OutrosController {
     final private OutrosService service;
-//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+
     @GetMapping()
     public ResponseEntity<List<Outros>> buscarOutros(){
         return ResponseEntity.ok(service.buscarOutros());
     }
-//    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/filtrar/higiene-pessoal")
     public ResponseEntity<List<Optional<Outros>>> filtrarHigienePessoal(){
-        return ResponseEntity.ok(service.filtrarHigienePessoal());
+         return ResponseEntity.ok(service.filtrarHigienePessoal());
     }
-//    @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/filtrar/pele-rosto")
     public ResponseEntity<List<Optional<Outros>>> filtrarPeleRosto(){
         return ResponseEntity.ok(service.filtrarProdutosPele());

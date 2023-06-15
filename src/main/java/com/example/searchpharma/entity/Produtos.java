@@ -27,23 +27,20 @@ public class Produtos implements Serializable{
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @SequenceGenerator(name = SEQ, sequenceName = SEQ, allocationSize = 1)
     private Long id;
+
     @Column(name = "nome")
     private String nome;
-    @Column(name = "valor")
-    private Float valor;
+
+    @Column(name = "tipo")
+    private String tipo;
+
+    @Column(name = "preco")
+    private Float preco;
+
     @Column(name = "quantidade_estoque")
     private Integer quantidadeEstoque;
-    @Column(name = "medida")
-    private Float medida;
-    @Column(name="imagem")
-    private String imagem;
 
-//    @ManyToMany(mappedBy = "produto")
-//    @Column(name = "medida")
-//    private Fabricante marca;
-//
-//    @ManyToOne
-//    @Column(name = "categoria")
-//    private Categoria categoria;
+    @Column(name = "catalogo")
+    private Boolean catalogo;
 
 }
