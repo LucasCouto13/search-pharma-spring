@@ -16,4 +16,8 @@ public class ProdutoService {
     public List<Produtos> buscarProdutos() {
         return produtosRepository.findAll();
     }
+
+    public List<Produtos> filtrarProdutos(String nome){ return produtosRepository.filtro(nome);}
+
+    public List<Produtos> filtrarPorTipo(String tipo) { return produtosRepository.filtrarPorTipo(tipo);}
 }

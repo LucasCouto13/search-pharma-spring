@@ -34,6 +34,9 @@ public class Produtos implements Serializable{
     @Column(name = "tipo")
     private String tipo;
 
+    @Column(name="categoria")
+    private String categoria;
+
     @Column(name = "preco")
     private Float preco;
 
