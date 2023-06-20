@@ -44,6 +44,6 @@ public class Produtos implements Serializable{
     private Integer quantidadeEstoque;
 
     @Column(name = "catalogo")
-    private Boolean catalogo;
+    private Boolean catalogo = true;
 
 }

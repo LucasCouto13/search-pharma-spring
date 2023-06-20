@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +36,7 @@ public class ProdutosController {
     }
 
     @PostMapping()
-    public ResposeEntity<Produtos> salvarProduto(@RequestBody final Produto produto){
-        ResponseEntity.ok.body(service.salvarProduto());
+    public ResponseEntity<Produtos> salvarProduto(@RequestBody final Produtos produto){
+        return ResponseEntity.ok(service.salvarProduto(produto));
     }
 }

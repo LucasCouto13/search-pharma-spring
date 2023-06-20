@@ -3,6 +3,7 @@ package com.example.searchpharma.service;
 import com.example.searchpharma.entity.Produtos;
 import com.example.searchpharma.repository.ProdutosRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class ProdutoService {
     public List<Produtos> filtrarProdutos(String nome){ return produtosRepository.filtro(nome);}
 
     public List<Produtos> filtrarPorTipo(String tipo) { return produtosRepository.filtrarPorTipo(tipo);}
-    @Autowired
-    public Produto salvarProduto(Produto produto) {
-        return repository.save(produto);
+
+    public Produtos salvarProduto(final Produtos produtos) {
+        return produtosRepository.save(produtos);
     }
 }
