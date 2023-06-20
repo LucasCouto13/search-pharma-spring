@@ -32,4 +32,9 @@ public class ProdutosController {
     public ResponseEntity<List<Produtos>> filtrarPorTipo(@PathVariable() String tipo){
         return ResponseEntity.ok(service.filtrarPorTipo(tipo));
     }
+
+    @PostMapping()
+    public ResposeEntity<Produtos> salvarProduto(@RequestBody final Produto produto){
+        ResponseEntity.ok.body(service.salvarProduto());
+    }
 }

@@ -20,4 +20,8 @@ public class ProdutoService {
     public List<Produtos> filtrarProdutos(String nome){ return produtosRepository.filtro(nome);}
 
     public List<Produtos> filtrarPorTipo(String tipo) { return produtosRepository.filtrarPorTipo(tipo);}
+    @Autowired
+    public Produto salvarProduto(Produto produto) {
+        return repository.save(produto);
+    }
 }
