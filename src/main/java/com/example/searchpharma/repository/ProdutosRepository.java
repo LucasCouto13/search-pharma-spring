@@ -9,9 +9,15 @@ import java.util.List;
 
 public interface ProdutosRepository extends JpaRepository<Produtos, Long> {
 
-    @Query(value = "SELECT * FROM produto WHERE nome LIKE CONCAT ('%',:produto,'%')", nativeQuery = true)
-    List<Produtos> filtro(String produto);
+    @Query(value = "SELECT * FROM produto WHERE tipo=:tipo AND nome LIKE CONCAT ('%',:produto,'%')", nativeQuery = true)
+    List<Produtos> filtro(String tipo, String produto);
 
     @Query(value = "SELECT * FROM produto WHERE tipo =:tipo", nativeQuery = true)
     List<Produtos> filtrarPorTipo(String tipo);
+
+    @Query(value = "SELECT * FROM produto where categoria =:categoria", nativeQuery = true)
+    List<Produtos> filtrarPorCategoria(String categoria);
+
+    @Query(value = "UPDATE produto SET catalogo=:catalogo WHERE id=:id", nativeQuery = true)
+    Produtos setarCatalogo(Boolean catalogo, Long id);
 }

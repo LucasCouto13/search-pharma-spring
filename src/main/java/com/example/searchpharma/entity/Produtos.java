@@ -46,4 +46,7 @@ public class Produtos implements Serializable{
     @Column(name = "catalogo")
     private Boolean catalogo = true;
 
+    @Column(name = "imagem")
+    private String imagem;
+
 }
